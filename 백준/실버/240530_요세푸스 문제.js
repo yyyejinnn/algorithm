@@ -1,6 +1,6 @@
 /**
  * https://www.acmicpc.net/problem/11866
- * 원형 연결리스트
+ * 원형연결리스트 사용
  */
 
 function solution1() {
@@ -102,7 +102,9 @@ function solution1() {
   });
 }
 
-/** shift 사용했을 때 - 큐 */
+/**
+ * shift 사용했을 때 - 큐
+ */
 
 function solution2() {
   // 7, 3 가정

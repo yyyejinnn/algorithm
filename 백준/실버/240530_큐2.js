@@ -18,7 +18,10 @@ class Node {
   }
 }
 
-// double-linked-list 사용
+/**
+ * 이중연결리스트 사용
+ * -> .shift() 구현 시 시간 초과
+ */
 class Queue {
   constructor() {
     this.head = null;
