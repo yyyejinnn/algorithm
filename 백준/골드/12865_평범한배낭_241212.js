@@ -23,8 +23,11 @@ rl.on('close', () => {
 
   for (let maxW = 1; maxW <= k; maxW++) {
     for (let i = 1; i <= n; i++) {
-      let [prevW, prevV] = items[i - 1];
-      dp[i][maxW] = Math.max(dp[i - 1][maxW], prevV + dp[i - 1][maxW - prevW] || 0);
+      let [w, v] = items[i - 1];
+      dp[i][maxW] = Math.max(dp[i - 1][maxW], v + dp[i - 1][maxW - w] || 0);
+      // dp[i - 1][maxW]: 현재(i) 물건을 넣지 않을 경우 -> maxW kg 배낭에 바로 직전 물건(i-1)까지 넣었을 때의 최대 가치
+      // v + dp[i - 1][maxW - w]: 현재 물건을 넣을 경우
+      //                          -> '현재 물건의 가치(v) + maxW-현재 물건 무게(w)'kg 배낭에 i-1 물건까지 넣었을 때의 최대 가치
     }
   }
 
